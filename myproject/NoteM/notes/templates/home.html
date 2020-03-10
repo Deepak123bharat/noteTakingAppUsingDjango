@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+ {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-dismissable" role="alert">
+        <button class="close" data-dissmiss="alert">
+            <small><sup> {{ message }}</sup></small>
+           
+        </button>
+    </div>
+    {% endfor %}
+ {% endif%}
+
+{% if all_items %}
+        
+        {% for things in all_items %}
+      
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <div class="p-3 mb-2 bg-warning text-dark">
+              <h5 class="card-title">Note</h5> 
+              <p class="card-text">{{ things.item }}</p>
+              <p class="card-text">{{ things.created}}</p>
+              <p><a href="{% url 'delete' things.id %}"><b>Delete</b></a></p>
+                </div>
+            </div>
+          </div>    
+        <br>
+     
+        {% endfor %}
+    </table>
+    
+{% endif %}
+
+{% endblock %}
+
