@@ -14,9 +14,9 @@
  {% endif%}
 
 {% if all_items %}
-      <table class="table table-boadered">
+        <div class="row">
         {% for things in all_items %}
-        <tr>
+        <div class="col-md-3">
         <div class="card" style="width: 18rem;">
             <div class="card-body">
                 <div class="p-3 mb-2 bg-warning text-dark">
@@ -28,10 +28,11 @@
             </div>
           </div>    
         <br>
-        </tr>
+      </div>
         {% endfor %}
-    </table> 
+    </div>
 {% endif %}
 
 {% endblock %}
+
 
